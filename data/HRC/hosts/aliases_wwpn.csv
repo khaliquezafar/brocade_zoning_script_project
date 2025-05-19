@@ -1,0 +1,3 @@
+alias_name_fab_a,wwpn_1,alias_name_fab_b,wwpn_2
+srv01_fabA,10:00:00:00:c9:12:34:56,srv01_fabB,20:00:00:00:c9:65:43:21
+srv02_fabA,10:00:00:00:c9:12:34:57,srv02_fabB,20:00:00:00:c9:65:43:22
