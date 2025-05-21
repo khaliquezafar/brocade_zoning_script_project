@@ -1,6 +1,7 @@
 import csv
 import os
 import re
+from datetime import datetime
 
 def read_csv(filepath):
     with open(filepath, mode="r", newline="") as f:
@@ -113,8 +114,9 @@ def main():
         else:
             rows = read_csv(alias_file)
             if len(rows[0]) >= 4:
-                write_alias_script(rows[1:], os.path.join(results_dir, "alias_script.txt"))
-                print(f"✅ Alias script saved to {results_dir}/alias_script.txt")
+                output_alias_path = os.path.join(results_dir, "alias_script.txt")
+                write_alias_script(rows[1:], output_alias_path)
+                print(f"✅ Alias script saved to {output_alias_path}")
             else:
                 print("❌ aliases.csv must have at least 4 columns.")
         return
@@ -136,6 +138,7 @@ def main():
             return
         host_idx = int(selected_host) - 1
         host_alias_file = os.path.join(hosts_data_dir, host_alias_files[host_idx])
+        host_alias_name = host_alias_files[host_idx].replace("host_aliases_", "").replace(".csv", "")
         hosts = read_csv(host_alias_file)
 
         storage_files = list_storage_csv_files(storage_data_dir)
@@ -155,7 +158,9 @@ def main():
                 fname = storage_files[idx]
                 storage_name = fname.replace("storage_", "").replace(".csv", "")
                 storage_path = os.path.join(storage_data_dir, fname)
-                output_path = os.path.join(results_dir, f"zoning_{storage_name}.txt")
+
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                output_path = os.path.join(results_dir, f"zoning_{site}_{host_alias_name}_{storage_name}_{timestamp}.txt")
 
                 write_combined_zoning_script(hosts, storage_name, storage_path, output_path, cfgname_a, cfgname_b)
             else:
