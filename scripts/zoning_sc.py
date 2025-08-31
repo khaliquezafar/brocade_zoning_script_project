@@ -91,8 +91,8 @@ def list_host_alias_csv_files(hosts_data_dir):
 
 def main():
     site = input("Enter site name (HRC/KCA): ").strip().upper()
-    if site not in ["HRC", "KCA"]:
-        print("❌ Invalid site. Must be HRC or KCA.")
+    if site not in ["site1", "site2"]:
+        print("❌ Invalid site. Must be site1 or site2.")
         return
 
     hosts_data_dir = f"../data/{site}/hosts"
