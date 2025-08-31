@@ -1,6 +1,6 @@
 # 🧰 SAN Zoning Script Generator 
 
-This Python script automates the creation of `alicreate`, `zonecreate`, and `cfgadd` commands for Brocade SAN zoning configuration. It supports multi-site zoning (e.g., site1, site2), dynamic alias and zone file selection, and generate zoning script for multiple storages in the environment. This script is created for SAN fabric and storage environment however, can be adjusted for any environment as the input is dynamically configured like changing the sites directory and paths in scripts and directory structure and can also increase the sites by replicating the same logic.
+This Python script automates the generation of alicreate, zonecreate, and cfgadd commands for Brocade SAN zoning configuration. It supports multi-site zoning, dynamic alias/zone file selection, and generates zoning scripts for multiple storages. Designed for SAN fabric environments, it is highly adaptable and can be customized for different setups by adjusting site directories and paths. The script’s logic is scalable, allowing for easy expansion to additional sites.
 ---
 
 ## 📁 Directory Structure
