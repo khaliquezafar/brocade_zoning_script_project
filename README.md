@@ -86,7 +86,7 @@ Available Storage Systems:
 1. storage01
 2. storage02
 Enter the numbers of the storage systems to use (comma-separated): 1
-✅ Zoning and cfgadd script saved to ../results/Site2\zoning_storage01.txt
+✅ Zoning and cfgadd script saved to ../results/site2\zoning_storage01.txt
 
 ```
 
